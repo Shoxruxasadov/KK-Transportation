@@ -40,7 +40,7 @@ export default function Hero({
   title,
   description,
   primaryCta,
-  image = "/hero.png",
+  image = "/hero.webp",
   variant = "full",
 }: Props) {
   return (

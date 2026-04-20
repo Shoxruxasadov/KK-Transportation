@@ -65,7 +65,7 @@ export default function AboutCompany() {
               className="relative aspect-[850/316] w-full rounded-2xl overflow-hidden"
             >
               <Image
-                src="/images/about-company.png"
+                src="/images/about-companys.png"
                 alt="K&K Transportation fleet"
                 fill
                 className="object-cover"
