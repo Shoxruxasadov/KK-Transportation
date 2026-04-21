@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const BASE = "https://kktransportation.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/about", "/services", "/drivers", "/contact", "/terms"];
+  const routes = ["", "/about", "/drivers", "/asdriver", "/contact", "/terms"];
   const now = new Date();
   return routes.map((r) => ({
     url: `${BASE}${r}`,

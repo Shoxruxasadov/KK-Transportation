@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -8,15 +9,6 @@ import { DRIVER_TESTIMONIALS } from "@/lib/constants";
 import { fadeUp } from "@/lib/animations";
 
 const BASE_COUNT = 9;
-
-function initials(name: string) {
-  return name
-    .split(/\s+/)
-    .map((w) => w[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-}
 
 export default function DriversSay() {
   const [showAll, setShowAll] = useState(false);
@@ -32,11 +24,14 @@ export default function DriversSay() {
   const renderCard = (t: (typeof DRIVER_TESTIMONIALS)[number]) => (
     <div className="p-5 rounded-[10px] bg-white">
       <div className="flex items-center gap-2.5 pb-4">
-        <div
-          className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold"
-          style={{ backgroundColor: t.color }}
-        >
-          {initials(t.name)}
+        <div className="relative shrink-0 w-10 h-10 rounded-full overflow-hidden">
+          <Image
+            src={t.image}
+            alt={t.name}
+            fill
+            className="object-cover"
+            sizes="40px"
+          />
         </div>
         <div className="flex flex-col">
           <span className="text-sm font-bold text-primary leading-[1.43]">
@@ -56,8 +51,9 @@ export default function DriversSay() {
       <Container>
         <div className="flex flex-col gap-[60px]">
           <div className="flex flex-col gap-5 text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-medium leading-[1.4] text-dark">
-              What our drivers say
+            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-medium leading-[1.4] text-text-muted">
+              What our{" "}
+              <span className="font-semibold text-dark">drivers</span> say
             </h2>
             <p className="text-base leading-[1.5] text-text-muted">
               We are committed to delivering reliable freight services, and our
@@ -69,9 +65,14 @@ export default function DriversSay() {
           <div className="relative">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
               {[0, 1, 2].map((colIdx) => (
-                <div key={colIdx} className="flex flex-col gap-5">
+                <div
+                  key={colIdx}
+                  className={`${
+                    colIdx === 0 || showAll ? "flex" : "hidden sm:flex"
+                  } flex-col gap-5`}
+                >
                   {columns[colIdx].map((t) => (
-                    <motion.div key={t.name} variants={fadeUp}>
+                    <motion.div key={t.username} variants={fadeUp}>
                       {renderCard(t)}
                     </motion.div>
                   ))}
@@ -79,7 +80,7 @@ export default function DriversSay() {
                     {showAll &&
                       extraColumns[colIdx].map((t) => (
                         <motion.div
-                          key={t.name}
+                          key={t.username}
                           initial={{ opacity: 0, y: -12, height: 0 }}
                           animate={{ opacity: 1, y: 0, height: "auto" }}
                           exit={{ opacity: 0, y: -12, height: 0 }}

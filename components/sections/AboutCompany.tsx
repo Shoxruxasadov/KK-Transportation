@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
-import AnimatedSection from "@/components/ui/AnimatedSection";
 import { fadeUp } from "@/lib/animations";
 
 const FEATURES = [
@@ -13,23 +12,42 @@ const FEATURES = [
   "Dedicated customer support",
 ];
 
+const viewport = { once: true, amount: 0.2 };
+
 export default function AboutCompany() {
   return (
-    <AnimatedSection stagger className="pt-[100px] pb-[50px]">
+    <section className="pt-[100px] pb-[50px]">
       <Container>
         <div className="flex flex-col gap-[60px]">
           <div className="flex flex-col lg:flex-row gap-10">
-            <div className="lg:w-[390px] shrink-0 flex items-start gap-2.5 py-4">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              variants={fadeUp}
+              className="lg:w-[390px] shrink-0 flex items-start gap-2.5 py-4"
+            >
               <span className="block w-[18px] h-[18px] rounded-full bg-primary" />
               <span className="text-base font-semibold text-dark leading-[1.5]">
                 About Company
               </span>
-            </div>
-            <div className="flex-1 flex flex-col gap-5">
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              variants={fadeUp}
+              transition={{ delay: 0.1 }}
+              className="flex-1 flex flex-col gap-5"
+            >
               <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-medium text-text-muted leading-[1.4]">
-                We specialize in freight transportation, delivering cargo with
-                precision, reliability, and full visibility — ensuring your
-                goods move safely and on time, every time.
+                We specialize in{" "}
+                <span className="font-semibold text-dark">
+                  freight transportation
+                </span>
+                , delivering cargo with precision, reliability, and full
+                visibility — ensuring your goods move safely and on time, every
+                time.
               </h2>
               <p className="text-base font-normal text-text-muted leading-[1.5]">
                 Supporting businesses with end-to-end freight transportation
@@ -38,7 +56,7 @@ export default function AboutCompany() {
                 maintaining full visibility and control at every stage of the
                 journey
               </p>
-            </div>
+            </motion.div>
           </div>
 
           <div className="grid lg:grid-cols-[390px_1fr] gap-10 items-center">
@@ -46,8 +64,12 @@ export default function AboutCompany() {
               {FEATURES.map((feature, i) => (
                 <motion.div
                   key={feature}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewport}
                   variants={fadeUp}
-                  className="flex items-center gap-3 pl-2 pr-6 py-2 rounded-full bg-base"
+                  transition={{ delay: 0.15 + i * 0.1 }}
+                  className="flex items-center gap-3 pl-2 pr-6 py-2 rounded-full bg-white"
                 >
                   <div className="shrink-0 min-w-12 px-5 py-3 rounded-full bg-[#F8D614] flex items-center justify-center">
                     <span className="text-base font-semibold text-black leading-[1.5]">
@@ -61,7 +83,11 @@ export default function AboutCompany() {
               ))}
             </div>
             <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
               variants={fadeUp}
+              transition={{ delay: 0.2 }}
               className="relative aspect-[850/316] w-full rounded-2xl overflow-hidden"
             >
               <Image
@@ -75,6 +101,6 @@ export default function AboutCompany() {
           </div>
         </div>
       </Container>
-    </AnimatedSection>
+    </section>
   );
 }

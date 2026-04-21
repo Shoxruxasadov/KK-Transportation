@@ -23,30 +23,88 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kktransportation.com"),
   title: {
     default: "K&K Transportation — Reliable Logistics Across the United States",
     template: "%s | K&K Transportation",
   },
   description:
     "Precision-driven logistics that keeps your goods moving. OTR trucking, 24/7 dispatch, real-time tracking — delivering your cargo anywhere in the United States.",
+  applicationName: "K&K Transportation",
   keywords: [
-    "logistics",
-    "trucking",
-    "OTR",
-    "freight",
-    "transportation",
-    "US",
-    "dispatch",
+    "K&K Transportation",
+    "logistics company USA",
+    "OTR trucking",
+    "freight transportation",
+    "dry van trucking",
+    "reefer freight",
+    "nationwide dispatch",
+    "24/7 dispatch",
+    "trucking jobs",
+    "CDL driver jobs",
+    "company drivers",
+    "truck drivers hiring",
+    "real-time freight tracking",
+    "Wheaton IL trucking",
+    "Illinois trucking company",
+    "interstate freight",
+    "cargo delivery US",
   ],
   authors: [{ name: "K&K Transportation" }],
+  creator: "//shoxruxasadov.uz",
+  publisher: "K&K Transportation",
+  category: "Logistics",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logo.png", type: "image/png" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "K&K Transportation",
-    description:
-      "Precision-driven logistics across the United States. No delays, no guesswork.",
     type: "website",
     locale: "en_US",
+    url: "https://kktransportation.com",
+    siteName: "K&K Transportation",
+    title: "K&K Transportation — Reliable Logistics Across the United States",
+    description:
+      "Precision-driven logistics across the United States. OTR trucking, 24/7 dispatch, real-time tracking — no delays, no guesswork.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "K&K Transportation",
+      },
+    ],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: "K&K Transportation — Reliable Logistics Across the United States",
+    description:
+      "Precision-driven logistics across the United States. OTR trucking, 24/7 dispatch, real-time tracking.",
+    images: ["/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
 };
 
 export default function RootLayout({

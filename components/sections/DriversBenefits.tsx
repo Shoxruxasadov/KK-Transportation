@@ -30,8 +30,9 @@ export default function DriversBenefits() {
             variants={fadeUp}
             className="flex flex-col gap-5 text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] leading-[1.4] text-dark">
-              Why drive with us?
+            <h2 className="text-3xl sm:text-4xl lg:text-[40px] leading-[1.4] text-text-muted">
+              Why <span className="font-semibold text-dark">drive</span> with
+              us?
             </h2>
             <p className="text-base leading-[1.5] text-text-muted">
               We provide the tools, support, and steady freight you need to

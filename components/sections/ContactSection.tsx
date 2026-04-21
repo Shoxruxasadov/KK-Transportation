@@ -42,7 +42,8 @@ export default function ContactSection() {
         <div className="flex flex-col gap-[60px]">
           <div className="flex flex-col gap-5 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-normal text-text-muted leading-[1.4]">
-              Get in touch with our logistic experts
+              Get in touch with our{" "}
+              <span className="text-dark">logistic experts</span>
             </h2>
             <p className="text-base font-normal text-text-muted leading-[1.5]">
               Have questions or need a tailored freight solution? Our team is

@@ -42,7 +42,11 @@ export default function WorkWithUs() {
           <div className="p-8 flex flex-col gap-6 justify-center">
             <div className="flex flex-col gap-5">
               <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-normal text-text-muted leading-[1.4]">
-                Work with K&amp;K Transportation today
+                Work with{" "}
+                <span className="font-semibold text-dark">
+                  K&amp;K Transportation
+                </span>{" "}
+                today
               </h2>
               <p className="text-base font-normal text-text-muted leading-[1.5]">
                 Start moving your freight with confidence — backed by a team

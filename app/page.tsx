@@ -18,7 +18,9 @@ export default function HomePage() {
       <AnnouncementsMarquee />
       <Metric />
       <AboutCompany />
+      <div className="h-10"></div>
       <Partners />
+         <div className="h-10"></div>
       <DriversSay />
       <ContactSection />
       <FAQ />

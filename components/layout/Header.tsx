@@ -67,8 +67,9 @@ export default function Header() {
                   priority
                 />
               </div>
-              <span className="font-bold text-dark text-base tracking-tight">
-                {SITE.name}
+              <span className="text-dark text-base tracking-tight">
+                <span className="font-extrabold">K&amp;K</span>{" "}
+                <span className="font-medium">Transportation</span>
               </span>
             </Link>
 
@@ -101,7 +102,7 @@ export default function Header() {
                 href="/asdriver"
                 className="hidden sm:inline-flex items-center gap-1.5 px-4 lg:px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition-colors group"
               >
-                Apply Now
+                Join as Driver
                 <ArrowUpRight
                   size={16}
                   className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -173,7 +174,7 @@ export default function Header() {
                     href="/asdriver"
                     className="sm:hidden self-stretch mt-3 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-primary text-white text-base font-semibold"
                   >
-                    Apply Now <ArrowUpRight size={16} />
+                    Join as Driver <ArrowUpRight size={16} />
                   </Link>
                 </div>
               </motion.div>
